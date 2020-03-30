@@ -1,10 +1,7 @@
 <template>
     <div class="mainCategory">
         <header-section @addFairEvent="showModelHandelr">
-            <template #title>
-                There is title
-                jojklhsdfedasdasdasrddsdejhgjhgjadaadasasdassdadsddsasdasتاﻻتتﻻ5442dsasas
-            </template>
+            <template #title>There is title</template>
         </header-section>
         <h1>category</h1>
         <ve-model :show="showModel" :width="800" @close="hideModelHandelr">
