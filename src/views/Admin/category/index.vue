@@ -5,10 +5,7 @@
         </header-section>
         <h1>category</h1>
         <ve-model :show="showModel" :width="800" @close="hideModelHandelr">
-            <categoryForm></categoryForm>
-            <ve-button @click="hideModelHandelr">
-                <template>Close</template>
-            </ve-button>
+            <categoryForm @cancelForm="hideModelHandelr"></categoryForm>
         </ve-model>
     </div>
 </template>

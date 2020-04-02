@@ -10,7 +10,7 @@ module.exports = {
     },
 }
 module.exports = {
-    chainWebpack: config => {
+    chainWebpack: (config) => {
         config.module.rules.delete('eslint')
     },
 }

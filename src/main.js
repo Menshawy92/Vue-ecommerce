@@ -1,4 +1,5 @@
 import Vue from 'vue'
+// import StyleUI from "@/assets/style/style.scss"
 import App from './App.vue'
 import router from './router'
 import store from './store'
