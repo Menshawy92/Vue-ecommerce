@@ -1,6 +1,12 @@
 <template>
-    <button :type="type" :class="['ve-btn',`ve-btn-${color}`]" @click="$emit('click')">
-        <slot></slot>
+    <button
+        :type="type"
+        :disable="disable"
+        :class="['ve-btn',`ve-btn-${color}`]"
+        @click="$emit('click')"
+    >
+        <slot v-if="!loading"></slot>
+        <Loader v-else></Loader>
     </button>
 </template>
 <script>
@@ -23,6 +29,16 @@ export default {
       validator: function (value) {
         return ['default', 'succss', 'error', 'info'].indexOf(value) !== 1
       }
+    },
+    disable: {
+      type: String,
+      required: false,
+      default: 'false',
+    },
+     loading: {
+      type: String,
+      required: false,
+      default: 'false',
     }
   },
   methods: {}
@@ -42,6 +58,10 @@ export default {
         background-color: #fff;
         color: #333;
     }
+    & [disabled] {
+        opacity: 0.5;
+    }
+
     &-info {
         background-color: #ffc107;
     }

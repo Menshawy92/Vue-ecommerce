@@ -1,5 +1,4 @@
 import Vue from 'vue'
-// import StyleUI from "@/assets/style/style.scss"
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -8,10 +7,12 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VEButton from '@/components/Shared/VEButton.vue'
 import VEModel from '@/components/Shared/VEModel.vue'
+// import Loader from '@/components/Shared/Loader.vue'
 import * as firebase from 'firebase'
 
 Vue.config.productionTip = false
 Vue.component(VEButton.name, VEButton)
+// Vue.component(Loader.name, Loader)
 Vue.component(VEModel.name, VEModel)
 library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -19,8 +20,8 @@ Vue.config.productionTip = false
 new Vue({
     router,
     store,
-    render: h => h(App),
-    cerated() {
+    render: (h) => h(App),
+    created() {
         var firebaseConfig = {
             apiKey: 'AIzaSyCn_vpuLJ_uT1aId1Ofj9ZgdpvntGHo9JI',
             authDomain: 'vue-ecommrce.firebaseapp.com',
