@@ -6,7 +6,7 @@
         @click="$emit('click')"
     >
         <slot v-if="!loading"></slot>
-        <Loader v-else></Loader>
+        <loader v-else></loader>
     </button>
 </template>
 <script>
@@ -31,14 +31,14 @@ export default {
       }
     },
     disable: {
-      type: String,
+      type: Boolean,
       required: false,
-      default: 'false',
+      default: false,
     },
      loading: {
-      type: String,
+      type: Boolean,
       required: false,
-      default: 'false',
+      default: false,
     }
   },
   methods: {}
@@ -53,6 +53,7 @@ export default {
     font-size: 14px;
     font-weight: bold;
     transition: all 0.5s;
+    min-width: 100px;
     cursor: pointer;
     &:hover {
         background-color: #fff;

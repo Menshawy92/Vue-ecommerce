@@ -7,12 +7,12 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VEButton from '@/components/Shared/VEButton.vue'
 import VEModel from '@/components/Shared/VEModel.vue'
-// import Loader from '@/components/Shared/Loader.vue'
+import Loader from '@/components/Shared/Loader.vue'
 import * as firebase from 'firebase'
 
 Vue.config.productionTip = false
 Vue.component(VEButton.name, VEButton)
-// Vue.component(Loader.name, Loader)
+Vue.component(Loader.name, Loader)
 Vue.component(VEModel.name, VEModel)
 library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

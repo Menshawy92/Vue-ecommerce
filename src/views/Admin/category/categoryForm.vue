@@ -20,25 +20,30 @@
 export default {
     name: 'form-category',
     data(){
-    return{
-        categoryName:null  ,
-        loader:false
-        };
+        return{
+            loader:false,
+            categoryName:null
+        }
     },
     methods:{
+         submit(){
+            this.loader = true
+        },
         cancel(){
             this.$emit('cancelForm')
         },
-        submit(){
-            this.loader = true,
-            this.$store.dispatch("submitCategoryForm",{
-                name:this.categoryName
-            }).then(()=>{
-                this.categoryName=null;
-                this.$emit('cancelForm');
-                this.loader = false
-            })
-        }
+        
+         submit(){
+             this.loader = true,
+             this.$store.dispatch("submitCategoryForm",{
+                 name:this.categoryName
+             }).then(()=>{
+                 this.categoryName=null;
+                 this.$emit('cancelForm');
+                 this.loader = false
+             })
+         }
+       
     }
 }
 </script>

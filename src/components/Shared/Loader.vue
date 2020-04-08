@@ -7,23 +7,23 @@
     </div>
 </template>
 <script>
-export default {}
+export default {
+    name:'loader'
+}
 </script>
 <style lang="scss" scoped>
 .lds-ring {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     position: relative;
-    width: 80px;
-    height: 80px;
 }
 .lds-ring div {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #fff;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #fff;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #fff transparent transparent transparent;
