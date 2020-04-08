@@ -1,7 +1,7 @@
 <template>
-    <ve-model :show="show" @close="close" :height="180" :width="400">
+    <ve-model :show="show" @close="close" :height="180gi" :width="400">
         <div class="model-text">
-            <p>Are you Sure Delete Item</p>
+            <p>Are you Sure Delete Ite adsm</p>
         </div>
         <div class="model-content">
             <ve-button type="submit" color="error" @click="deleteCategory">
