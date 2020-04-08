@@ -7,7 +7,7 @@
             <ul v-if="categories">
                 <li v-for="category in categories" :key="category.id">
                     {{category.name}}
-                    <ve-button @click="showDeleteModel">
+                    <ve-button @click="showDeleteModel(category.id)">
                         <template>Delete</template>
                     </ve-button>
                 </li>
@@ -19,7 +19,7 @@
         <deleteCategory
             :show="showModelHudeler"
             @close="hideModelHandelr"
-            @delete="deleteCategory(category.id)"
+            @deleteCategory="deleteCategory"
         ></deleteCategory>
     </div>
 </template>
@@ -37,7 +37,8 @@ export default {
     data() {
         return {
             showModel: false,
-            showModelHudeler:false
+            showModelHudeler:false,
+            selectCategoryToDelete:null,
         }
     },
       computed:{
@@ -50,17 +51,22 @@ export default {
         this.$store.dispatch("getCategories")
     },
     methods: {
-        showDeleteModel(){
+        showDeleteModel(id){
               this.showModelHudeler = true
+              this.selectCategoryToDelete = id
         },
         showModelHandelr() {
             this.showModel = true
         },
         hideModelHandelr() {
             this.showModel = false
+            this.showModelHudeler = false
         },
         deleteCategory(id){
-            this.$store.dispatch("deleteCategory", id)
+            this.$store.dispatch("deleteCategory", this.selectCategoryToDelete).then(()=>{
+                this.hideModelHandelr()
+                this.selectCategoryToDelete = null
+            })
         }
     },
   
