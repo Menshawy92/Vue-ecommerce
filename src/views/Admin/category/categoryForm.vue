@@ -26,9 +26,6 @@ export default {
         }
     },
     methods:{
-         submit(){
-            this.loader = true
-        },
         cancel(){
             this.$emit('cancelForm')
         },
