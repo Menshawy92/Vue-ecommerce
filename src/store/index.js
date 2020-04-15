@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+
 import adminStore from '@/store/admin/index.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {
-    admin: adminStore
-  }
+    state: {},
+    mutations: {},
+    actions: {},
+    modules: {
+        admin: adminStore,
+    },
 })

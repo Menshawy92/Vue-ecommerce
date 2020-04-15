@@ -1,0 +1,5 @@
+/dist/*
+/src/plugins/beautify.js
+/node_modules/*
+/tests/*
+/src/assets/fonts/*
