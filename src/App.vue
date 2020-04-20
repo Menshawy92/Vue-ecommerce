@@ -5,6 +5,11 @@
             rel="stylesheet"
         />
         <router-view />
+        <div class="home">
+            <div :class="{ active: $route.name === 'admin' }">
+                <router-link to="/admin">Home</router-link>
+            </div>
+        </div>
     </div>
 </template>
 
