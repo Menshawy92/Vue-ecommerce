@@ -2,46 +2,48 @@
     <button
         :type="type"
         :disable="disable"
-        :class="['ve-btn',`ve-btn-${color}`]"
+        :class="['ve-btn', `ve-btn-${color}`]"
         @click="$emit('click')"
     >
         <slot v-if="!loading"></slot>
-        <loader v-else></loader>
+        <loader color="default" v-else></loader>
     </button>
 </template>
 <script>
 export default {
-  name: 've-button',
-  props: {
-    type: {
-      type: String,
-      required: false,
-      default: 'button',
-      validator: function (value) {
-        // The value must match one of these strings
-        return ['button', 'submit'].indexOf(value) !== -1
-      }
+    name: 've-button',
+    props: {
+        type: {
+            type: String,
+            required: false,
+            default: 'button',
+            validator: function (value) {
+                // The value must match one of these strings
+                return ['button', 'submit'].indexOf(value) !== -1
+            },
+        },
+        color: {
+            type: String,
+            required: false,
+            default: 'default',
+            validator: function (value) {
+                return (
+                    ['default', 'succss', 'error', 'info'].indexOf(value) !== 1
+                )
+            },
+        },
+        disable: {
+            type: Boolean,
+            required: false,
+            default: false,
+        },
+        loading: {
+            type: Boolean,
+            required: false,
+            default: false,
+        },
     },
-    color: {
-      type: String,
-      required: false,
-      default: 'default',
-      validator: function (value) {
-        return ['default', 'succss', 'error', 'info'].indexOf(value) !== 1
-      }
-    },
-    disable: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-     loading: {
-      type: Boolean,
-      required: false,
-      default: false,
-    }
-  },
-  methods: {}
+    methods: {},
 }
 </script>
 <style lang="scss" scoped>
@@ -54,6 +56,7 @@ export default {
     font-weight: bold;
     transition: all 0.5s;
     min-width: 100px;
+    max-height: 45px;
     cursor: pointer;
     &:hover {
         background-color: #fff;

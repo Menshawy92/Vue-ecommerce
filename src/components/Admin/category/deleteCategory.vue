@@ -21,23 +21,23 @@
 </template>
 <script>
 export default {
-    name:"deleteCategory",
-    props:['show'],
-    data(){
-        return{
-            loader:false,
+    name: 'deleteCategory',
+    props: ['show'],
+    data() {
+        return {
+            loader: false,
         }
     },
-    methods:{
-        deleteCategory(){
-             this.loader = true,
-            this.$emit("deleteCategory")
+    methods: {
+        deleteCategory() {
+            this.$emit('deleteCategory')
+            this.loader = true
         },
-         close(){
-            this.$emit("close")
+        close() {
+            this.$emit('close')
+            this.loader = false
         },
-
-    }
+    },
 }
 </script>
 <style lang="scss" scoped>
