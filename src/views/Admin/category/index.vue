@@ -24,8 +24,8 @@
 </template>
 <script>
 import HeaderSection from '@/components/Admin/HeaderSection.vue'
-import categoryForm from '@/views/Admin/category/categoryForm.vue'
-import deleteCategory from '@/views/Admin/category/deleteCategory.vue'
+import categoryForm from '@/components/Admin/category/categoryForm.vue'
+import deleteCategory from '@/components/Admin/category/deleteCategory.vue'
 export default {
     name: 'category',
     components: {
